@@ -30,12 +30,8 @@
 # MAGIC ### クラスターのセットアップ
 # MAGIC
 # MAGIC - Databricks Runtime 12.2 ML GPU を備えたクラスター上でこれを実行します。 13.0 ML GPU でも動作するはずです。
-# MAGIC - 最後の分散 Spark 推論を実行しない場合、このノートブックの例を実行するには、必要なのは GPU を備えた単一ノードの「クラスター」だけです
-# MAGIC   - A10 および V100 インスタンスは動作するはずです。この例は、品質をある程度犠牲にしてモデルをワーキング メモリに適合させるように設計されています。
-# MAGIC   - A100 インスタンスが最適に動作し、以下にコメントする小さな変更を加えるとパフォーマンスが向上します。
-# MAGIC - 最後の分散 Spark 推論を使用してサンプルを実行するには、複数GPU のクラスターをプロビジョニングします (そして、GPU 数に一致するように最後に再パーティションを変更します)。
-# MAGIC
-# MAGIC *A100 で実行する場合は「bitsandbytes」は必要なく、8 ビットでロードされないように以下のコメントに従ってコードが変更されることに注意してください。*
+# MAGIC - このノートブックの例を実行するには、必要なのは GPU を備えた単一ノードの「クラスター」だけです
+# MAGIC   - A100 インスタンスが最適に動作します。
 
 # COMMAND ----------
 
@@ -51,10 +47,6 @@
 # COMMAND ----------
 
 # MAGIC %pip install -U transformers langchain chromadb accelerate bitsandbytes fugashi unidic-lite einops
-
-# COMMAND ----------
-
-# %pip install -U accelerate==0.16.0 click==8.0.4 datasets==2.10.0 deepspeed==0.8.3 transformers[torch]==4.28.1 langchain==0.0.139 torch==1.13.1
 
 # COMMAND ----------
 
