@@ -56,7 +56,7 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install -U transformers langchain chromadb accelerate bitsandbytes fugashi unidic-lite einops
+# MAGIC %pip install -U transformers langchain chromadb accelerate bitsandbytes fugashi unidic-lite einops SentencePiece
 
 # COMMAND ----------
 
